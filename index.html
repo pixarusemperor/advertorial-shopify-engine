@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dossier Médical : Le Secret d'Ail Vieilli et d'Ubiquinol pour la Santé Cardiovasculaire</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* CSS RESET & VARIABLES */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg-page: #FFFFFF;
+      --bg-subtle: #F7FAFC;
+      --bg-card: #FFFFFF;
+      --text-main: #1A1A1A;
+      --text-muted: #556270;
+      --text-light: #718096;
+      --color-primary: #2B6CB0;
+      --color-primary-dark: #1E4E8C;
+      --color-primary-light: #EBF8FF;
+      --color-accent: #C53030;
+      --color-success: #276749;
+      --color-warning: #D69E2E;
+      --border-color: #E2E8F0;
+      --border-radius: 8px;
+      --box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+      --font-serif: 'Newsreader', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      font-size: 17px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* CONTAINER CONSTRAINT (720px Editorial Width) */
+    .article-container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
+    /* 1. URGENCY BANNER */
+    .urgency-banner {
+      background-color: #1A365D;
+      color: #FFFFFF;
+      text-align: center;
+      padding: 10px 16px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+    .urgency-banner span {
+      background: #C53030;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      text-transform: uppercase;
+      margin-right: 6px;
+    }
+
+    /* 2. EDITORIAL HEADLINE */
+    .article-header {
+      padding: 32px 0 16px;
+    }
+    .article-category {
+      display: inline-block;
+      color: var(--color-primary);
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 12px;
+    }
+    .editorial-headline {
+      font-family: var(--font-serif);
+      font-size: 34px;
+      line-height: 1.25;
+      font-weight: 700;
+      color: #0F172A;
+      margin-bottom: 16px;
+    }
+    .editorial-subhead {
+      font-size: 18px;
+      line-height: 1.5;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+
+    /* 3. BYLINE + DATE */
+    .byline-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 0;
+      border-top: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 24px;
+    }
+    .byline-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #E2E8F0;
+    }
+    .byline-info {
+      font-size: 13px;
+      line-height: 1.4;
+      color: var(--text-muted);
+    }
+    .byline-author {
+      font-weight: 700;
+      color: var(--text-main);
+      font-size: 14px;
+    }
+    .byline-credentials {
+      color: var(--color-primary);
+      font-weight: 500;
+    }
+
+    /* 4. HERO IMAGE + CAPTION */
+    .hero-image-wrapper {
+      margin-bottom: 28px;
+    }
+    .hero-image {
+      width: 100%;
+      height: auto;
+      border-radius: var(--border-radius);
+      box-shadow: var(--box-shadow);
+      display: block;
+    }
+    .image-caption {
+      font-size: 13px;
+      color: var(--text-light);
+      font-style: italic;
+      margin-top: 8px;
+      text-align: center;
+    }
+
+    /* 5. OPENING HOOK */
+    .article-body p {
+      margin-bottom: 20px;
+      color: #2D3748;
+    }
+    .article-body p.lead {
+      font-size: 19px;
+      line-height: 1.6;
+      font-weight: 500;
+      color: #1A202C;
+    }
+
+    /* 6. STAR RATING INTERRUPTER */
+    .star-interrupter {
+      background: var(--color-primary-light);
+      border: 1px solid #BEE3F8;
+      border-radius: var(--border-radius);
+      padding: 14px 20px;
+      margin: 32px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .stars {
+      color: #D69E2E;
+      font-size: 18px;
+      letter-spacing: 2px;
+    }
+    .star-text {
+      font-weight: 600;
+      font-size: 14px;
+      color: #1A365D;
+    }
+
+    /* 7. PAIN POINT ESCALATION */
+    .escalation-box {
+      background: #FFF5F5;
+      border-left: 4px solid var(--color-accent);
+      padding: 24px;
+      border-radius: 0 var(--border-radius) var(--border-radius) 0;
+      margin: 32px 0;
+    }
+    .escalation-box h3 {
+      font-size: 19px;
+      color: #9B2C2C;
+      margin-bottom: 14px;
+      font-weight: 700;
+    }
+    .checklist {
+      list-style: none;
+    }
+    .checklist li {
+      position: relative;
+      padding-left: 28px;
+      margin-bottom: 12px;
+      font-size: 16px;
+      color: #4A5568;
+    }
+    .checklist li::before {
+      content: "✕";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: #E53E3E;
+      font-weight: bold;
+    }
+
+    /* 8. ROOT CAUSE REFRAME */
+    .reframe-section {
+      background: #F7FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: var(--border-radius);
+      padding: 28px;
+      margin: 36px 0;
+    }
+    .reframe-section h3 {
+      font-family: var(--font-serif);
+      font-size: 24px;
+      color: #1A365D;
+      margin-bottom: 16px;
+    }
+    .mechanism-highlight {
+      background: #FFFFFF;
+      border-left: 4px solid var(--color-primary);
+      padding: 16px;
+      border-radius: 4px;
+      margin: 16px 0;
+      font-weight: 500;
+    }
+
+    /* 9. PRODUCT REVEAL */
+    .product-reveal {
+      text-align: center;
+      background: #FFFFFF;
+      border: 2px solid #E2E8F0;
+      border-radius: var(--border-radius);
+      padding: 32px 24px;
+      margin: 40px 0;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    }
+    .product-reveal h3 {
+      font-family: var(--font-serif);
+      font-size: 28px;
+      color: #0F172A;
+      margin-bottom: 8px;
+    }
+    .product-badge {
+      display: inline-block;
+      background: #C6F6D5;
+      color: #22543D;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+    .product-image {
+      max-width: 280px;
+      height: auto;
+      border-radius: var(--border-radius);
+      margin: 16px auto 24px;
+      display: block;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
+
+    /* 10. INGREDIENT / FEATURE CARDS */
+    .ingredients-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin: 28px 0 40px;
+    }
+    .ingredient-card {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: var(--border-radius);
+      padding: 20px;
+    }
+    .ingredient-card h4 {
+      font-size: 16px;
+      color: var(--color-primary-dark);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .ingredient-card p {
+      font-size: 14px;
+      line-height: 1.5;
+      color: #4A5568;
+      margin-bottom: 0;
+    }
+
+    /* 11. SOCIAL PROOF BLOCK */
+    .reviews-section {
+      margin: 40px 0;
+    }
+    .reviews-header {
+      font-family: var(--font-serif);
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: #1A202C;
+    }
+    .review-card {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: var(--border-radius);
+      padding: 20px;
+      margin-bottom: 16px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+    }
+    .review-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .reviewer-name {
+      font-weight: 700;
+      font-size: 15px;
+      color: #2D3748;
+    }
+    .verified-badge {
+      color: #276749;
+      font-size: 12px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .review-body {
+      font-size: 15px;
+      line-height: 1.6;
+      color: #4A5568;
+    }
+
+    /* 12. RESULTS TIMELINE */
+    .timeline-box {
+      background: var(--bg-subtle);
+      border-radius: var(--border-radius);
+      padding: 28px;
+      margin: 36px 0;
+    }
+    .timeline-item {
+      position: relative;
+      padding-left: 32px;
+      margin-bottom: 24px;
+    }
+    .timeline-item:last-child {
+      margin-bottom: 0;
+    }
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: 10px;
+      top: 6px;
+      bottom: -24px;
+      width: 2px;
+      background: #CBD5E0;
+    }
+    .timeline-item:last-child::before {
+      display: none;
+    }
+    .timeline-dot {
+      position: absolute;
+      left: 3px;
+      top: 6px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--color-primary);
+      border: 3px solid #FFFFFF;
+      box-shadow: 0 0 0 2px var(--color-primary);
+    }
+    .timeline-title {
+      font-weight: 700;
+      font-size: 16px;
+      color: #1A365D;
+      margin-bottom: 4px;
+    }
+
+    /* 13. COMPARISON TABLE */
+    .comparison-table-wrapper {
+      overflow-x: auto;
+      margin: 36px 0;
+    }
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+    .comparison-table th, .comparison-table td {
+      padding: 14px 16px;
+      text-align: left;
+      border-bottom: 1px solid #E2E8F0;
+    }
+    .comparison-table th {
+      background: #F1F5F9;
+      font-weight: 700;
+      color: #1E293B;
+    }
+    .comparison-table th.highlight, .comparison-table td.highlight {
+      background: #EBF8FF;
+      color: #1A365D;
+      font-weight: 600;
+      border-left: 2px solid var(--color-primary);
+      border-right: 2px solid var(--color-primary);
+    }
+    .check {
+      color: #276749;
+      font-weight: bold;
+    }
+    .cross {
+      color: #E53E3E;
+      font-weight: bold;
+    }
+
+    /* 14. 3-TIER PRICING PACKAGES */
+    .pricing-section {
+      margin: 48px 0;
+      text-align: center;
+    }
+    .pricing-heading {
+      font-family: var(--font-serif);
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 24px;
+      align-items: stretch;
+    }
+    .pricing-card {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: var(--border-radius);
+      padding: 24px 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+    }
+    .pricing-card.popular {
+      border: 2px solid var(--color-primary);
+      box-shadow: 0 8px 24px rgba(43, 108, 176, 0.15);
+      background: #FCFDFF;
+      transform: scale(1.02);
+    }
+    .badge-popular {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--color-primary);
+      color: #FFFFFF;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .pricing-tier-name {
+      font-weight: 700;
+      font-size: 16px;
+      margin-bottom: 8px;
+      color: #1A202C;
+    }
+    .pricing-price {
+      font-size: 26px;
+      font-weight: 800;
+      color: #1A365D;
+      margin-bottom: 4px;
+    }
+    .pricing-savings {
+      font-size: 12px;
+      color: var(--color-success);
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+    .btn-cta {
+      display: block;
+      background: var(--color-primary);
+      color: #FFFFFF;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 15px;
+      padding: 14px 16px;
+      border-radius: 6px;
+      min-height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s ease, transform 0.1s ease;
+      cursor: pointer;
+    }
+    .btn-cta:hover {
+      background: var(--color-primary-dark);
+      transform: translateY(-1px);
+    }
+    .btn-cta-accent {
+      background: #2E7D32;
+    }
+    .btn-cta-accent:hover {
+      background: #1B5E20;
+    }
+
+    /* 15. GUARANTEE */
+    .guarantee-box {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      background: #F7FAFC;
+      border: 1px dashed #CBD5E0;
+      border-radius: var(--border-radius);
+      padding: 24px;
+      margin: 36px 0;
+    }
+    .guarantee-badge {
+      font-size: 44px;
+      flex-shrink: 0;
+    }
+    .guarantee-text h4 {
+      font-size: 17px;
+      color: #1A365D;
+      margin-bottom: 4px;
+    }
+    .guarantee-text p {
+      font-size: 14px;
+      color: #4A5568;
+      margin-bottom: 0;
+      line-height: 1.5;
+    }
+
+    /* 16. FINAL CTA */
+    .final-cta-section {
+      background: #EBF8FF;
+      border: 1px solid #BEE3F8;
+      border-radius: var(--border-radius);
+      padding: 32px 24px;
+      text-align: center;
+      margin: 44px 0;
+    }
+    .final-cta-section h3 {
+      font-family: var(--font-serif);
+      font-size: 26px;
+      color: #1A365D;
+      margin-bottom: 12px;
+    }
+    .final-cta-section p {
+      font-size: 15px;
+      color: #2D3748;
+      margin-bottom: 20px;
+    }
+    .final-cta-btn {
+      max-width: 360px;
+      margin: 0 auto;
+      font-size: 16px;
+      background: #C53030;
+    }
+    .final-cta-btn:hover {
+      background: #9B2C2C;
+    }
+
+    /* 17. FOOTER */
+    .article-footer {
+      border-top: 1px solid var(--border-color);
+      padding: 32px 0 60px;
+      margin-top: 40px;
+      font-size: 12px;
+      color: var(--text-light);
+      line-height: 1.6;
+      text-align: center;
+    }
+    .footer-links {
+      margin-top: 12px;
+    }
+    .footer-links a {
+      color: var(--text-muted);
+      margin: 0 8px;
+      text-decoration: underline;
+    }
+
+    /* RESPONSIVE MEDIA QUERIES (MOBILE FIRST FLUIDITY) */
+    @media (max-width: 768px) {
+      .editorial-headline {
+        font-size: 26px;
+      }
+      .ingredients-grid {
+        grid-template-columns: 1fr;
+      }
+      .pricing-grid {
+        grid-template-columns: 1fr;
+      }
+      .pricing-card.popular {
+        transform: none;
+      }
+      .guarantee-box {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. URGENCY BANNER -->
+  <aside class="urgency-banner" aria-label="Avertissement éditorial">
+    <span>Dossier Spécial Santé</span> Enquête cardiologique exclusive — Mise à jour le 25 Septembre 2026
+  </aside>
+
+  <main class="article-container">
+
+    <!-- 2. EDITORIAL HEADLINE -->
+    <header class="article-header">
+      <div class="article-category">Revue Santé Cardiovasculaire & Métabolique</div>
+      <h1 class="editorial-headline">Le Secret Cardiologique à 49€ : Pourquoi les Spécialistes Recommandent Cette Formule d'Ail Vieilli Sans Odeur et d'Ubiquinol à Leurs Propres Proches</h1>
+      <p class="editorial-subhead">Plus de 48 390 Européens ont déjà remplacé leurs gélules d'ail conventionnelles et leur CoQ10 standard par ce protocole synergique à double action. Voici les données cliniques qui expliquent cet engouement.</p>
+    </header>
+
+    <!-- 3. BYLINE + DATE -->
+    <div class="byline-wrapper">
+      <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=120&q=80" alt="Dr. Marc Lemoine" class="byline-avatar">
+      <div class="byline-info">
+        <div class="byline-author">Par Dr. Marc Lemoine</div>
+        <div>Ancien Chef de Clinique • Spécialiste en Prévention Cardio-Métabolique</div>
+        <div class="byline-credentials">Publié le 25 Septembre 2026 • 7 min de lecture</div>
+      </div>
+    </div>
+
+    <!-- 4. HERO IMAGE + CAPTION -->
+    <figure class="hero-image-wrapper">
+      <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80" alt="Consultation cardiologique et bilan de souplesse artérielle" class="hero-image">
+      <figcaption class="image-caption">Figure 1.1 : À partir de 45 ans, l'élasticité artérielle subit une baisse mesurée de 32%, tandis que la concentration cardiaque en CoQ10 chute de plus de moitié.</figcaption>
+    </figure>
+
+    <!-- 5. OPENING HOOK (2-3 PARAGRAPHS) -->
+    <article class="article-body">
+      <p class="lead">Si vous avez déjà ressenti cette sensation d'essoufflement anormal au sommet d'une simple volée de marches, ou si vous observez avec inquiétude les chiffres qui grimpent sur votre tensiomètre chaque matin, vous n'êtes pas seul.</p>
+      
+      <p>Pendant des décennies, on nous a répété que la fatigue circulatoire, la rigidité des vaisseaux sanguins et les jambes lourdes étaient simplement une fatalité liée à l'âge. Des millions de personnes achètent chaque jour des compléments d'ail séché en pharmacie ou des capsules génériques de CoQ10 dans l'espoir de préserver leur cœur.</p>
+
+      <p>Pourtant, selon une série d'études publiées par des instituts cardiologiques européens indépendants, plus de 90% de ces compléments finissent détruits par l'acidité gastrique avant même d'avoir pu franchir la barrière intestinale. Mais une découverte biologique majeure est en train de bousculer cette approche traditionnelle.</p>
+    </article>
+
+    <!-- 6. STAR RATING INTERRUPTER -->
+    <div class="star-interrupter">
+      <span class="stars">★★★★★</span>
+      <span class="star-text">Noté 4,8/5 par plus de 48 390 utilisateurs réguliers en France, Suisse et Belgique</span>
+    </div>
+
+    <!-- 7. PAIN POINT ESCALATION -->
+    <section class="escalation-box">
+      <h3>Pourquoi les solutions classiques échouent-elles systématiquement ?</h3>
+      <p style="margin-bottom: 16px; font-size: 15px; color: #4A5568;">Si vous prenez déjà des compléments pour soutenir votre cœur, vous avez très probablement fait face à ces déconvenues :</p>
+      <ul class="checklist">
+        <li><strong>L'inconfort digestif et l'haleine d'ail persistante :</strong> Les gélules d'ail traditionnelles libèrent de l'allicine brute qui provoque des remontées acides et une odeur corporelle tenace pendant des heures.</li>
+        <li><strong>L'inactivation gastrique :</strong> L'allicine brute est dégradée à 95% par l'acide chlorhydrique de l'estomac en moins de 3 minutes.</li>
+        <li><strong>Le piège de l'ubiquinone standard :</strong> Après 45 ans, le foie perd la capacité enzymatique de transformer le CoQ10 standard (ubiquinone) en sa forme active assimilable.</li>
+        <li><strong>L'absence d'action sur la calcification :</strong> Prendre du CoQ10 sans molécule protectrice des parois artérielles ne résout pas le problème de la rigidité vasculaire.</li>
+      </ul>
+    </section>
+
+    <!-- 8. ROOT CAUSE REFRAME (THE MECHANISM HERO) -->
+    <section class="reframe-section">
+      <h3>Le Mécanisme Réel : Pourquoi la S-Allylcystéine et l'Ubiquinol Changent Tout</h3>
+      <p>Pour soutenir durablement la fonction cardiovasculaire, il ne suffit pas d'ingérer de l'ail cru ou un antioxydant ordinaire. Il est indispensable d'activer simultanément deux leviers physiologiques précis :</p>
+
+      <div class="mechanism-highlight">
+        1. La Synthèse Endothéliale d'Oxyde Nitrique (Vasodilatation)
+      </div>
+      <p>Lorsque l'ail est soumis à un processus de maturation naturelle contrôlée de 20 mois, l'allicine instable se transforme en <strong>S-allylcystéine (SAC)</strong>. Ce composé hydrosoluble unique pénètre le flux sanguin avec une biodisponibilité de 98% et stimule les cellules endothéliales pour libérer de l'oxyde nitrique, redonnant aux artères leur élasticité naturelle.</p>
+
+      <div class="mechanism-highlight">
+        2. La Recharge Énergétique Mitochondriale du Myocarde
+      </div>
+      <p>Le muscle cardiaque bat plus de 100 000 fois par jour et consomme d'immenses quantités d'adénosine triphosphate (ATP). L'<strong>Ubiquinol</strong> (la forme réduite et pré-activée du Coenzyme Q10) pénètre directement les mitochondries des cellules cardiaques, offrant une absorption 8 fois supérieure à l'ubiquinone classique.</p>
+    </section>
+
+    <!-- 9. PRODUCT REVEAL -->
+    <section class="product-reveal">
+      <div class="product-badge">Formule Clinique Développée en Laboratoire</div>
+      <h3>Resilia® Ail Vieilli Inodore & CoQ10 Ubiquinol</h3>
+      <p style="color: var(--text-muted); font-size: 16px; max-width: 580px; margin: 0 auto 20px;">L'unique complexe nutraceutique associant 600 mg d'Extrait d'Ail Vieilli 20 Mois standardisé en SAC, 100 mg d'Ubiquinol actif et de la Vitamine K2 MK-7.</p>
+      
+      <img src="https://cdn.shopify.com/s/files/1/0963/4126/2620/files/photo-1584308666744-24d5c474f2ae.jpg?v=1790502338" alt="Flacon Resilia Ail Vieilli Inodore et Ubiquinol" class="product-image">
+
+      <p style="font-size: 15px; font-weight: 600; color: #2B6CB0;">60 Capsules Végétales • 100% Inodore • Sans Reflux • Testé en Laboratoire Indépendant</p>
+    </section>
+
+    <!-- 10. INGREDIENT / FEATURE CARDS -->
+    <section>
+      <h3 style="font-family: var(--font-serif); font-size: 24px; margin-bottom: 8px;">Ce qui compose chaque capsule :</h3>
+      <p style="color: var(--text-muted); font-size: 15px; margin-bottom: 20px;">Une formulation transparente, sans excipients controversés ni mélanges propriétaires masqués.</p>
+
+      <div class="ingredients-grid">
+        <div class="ingredient-card">
+          <h4>🧄 Extrait d'Ail Vieilli 20 Mois (600 mg)</h4>
+          <p>Standardisé en S-allylcystéine (SAC). Cliniquement étudié pour soutenir la souplesse artérielle et une pression sanguine équilibrée, sans odeur ni goût piquant.</p>
+        </div>
+        <div class="ingredient-card">
+          <h4>⚡ CoQ10 Ubiquinol Actif (100 mg)</h4>
+          <p>Forme pure brevetée directement assimilable par le myocarde, favorisant la production d'énergie ATP cellulaire et réduisant les sensations d'épuisement.</p>
+        </div>
+        <div class="ingredient-card">
+          <h4>🛡️ Vitamine K2 Naturelle MK-7</h4>
+          <p>Régule le métabolisme du calcium pour préserver les parois vasculaires des dépôts calciques et orienter le calcium vers la structure osseuse.</p>
+        </div>
+        <div class="ingredient-card">
+          <h4>🌱 Maturation Enzymatique Inodore</h4>
+          <p>Garantie sans brûlures d'estomac, sans reflux gastro-œsophagien et sans perturbation du microbiote intestinal.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11. SOCIAL PROOF BLOCK -->
+    <section class="reviews-section">
+      <h3 class="reviews-header">Retours d'Expérience de Patients et Praticiens</h3>
+
+      <div class="review-card">
+        <div class="review-header">
+          <span class="reviewer-name">Pierre D., 59 ans — Lyon</span>
+          <span class="verified-badge">✓ Acheteur Vérifié</span>
+        </div>
+        <div class="stars" style="font-size: 14px; margin-bottom: 8px;">★★★★★</div>
+        <p class="review-body">« J'étais très sceptique au début car j'avais déjà essayé des gélules d'ail noir bio qui me laissaient un goût affreux dans la bouche pendant des heures. Avec Resilia, absolument rien : zéro reflux. Au bout de 4 semaines, mon tensiomètre à la maison affiche enfin des mesures stables autour de 12/8. Mon médecin a validé la prise. »</p>
+      </div>
+
+      <div class="review-card">
+        <div class="review-header">
+          <span class="reviewer-name">Françoise M., 64 ans — Bordeaux</span>
+          <span class="verified-badge">✓ Acheteur Vérifié</span>
+        </div>
+        <div class="stars" style="font-size: 14px; margin-bottom: 8px;">★★★★★</div>
+        <p class="review-body">« Je prenais du CoQ10 ordinaire depuis deux ans sans ressentir la moindre différence. C'est en lisant un article sur l'ubiquinol actif que j'ai compris pourquoi mon corps ne l'absorbait pas. En 3 semaines avec cette formule, j'ai retrouvé l'énergie nécessaire pour mes 45 minutes de marche quotidienne sans sensation de cœur qui s'emballe. »</p>
+      </div>
+
+      <div class="review-card">
+        <div class="review-header">
+          <span class="reviewer-name">Dr. Alain V., Médecin Généraliste Honoraire — Genève</span>
+          <span class="verified-badge">✓ Praticien Retraité</span>
+        </div>
+        <div class="stars" style="font-size: 14px; margin-bottom: 8px;">★★★★★</div>
+        <p class="review-body">« La synergie ail vieilli standardisé en SAC et ubiquinol est la combinaison la plus rationnelle sur le plan biochimique pour préserver l'élasticité artérielle après 50 ans. C'est l'un des très rares produits que je recommande à mes propres frères. »</p>
+      </div>
+    </section>
+
+    <!-- 12. RESULTS TIMELINE -->
+    <section class="timeline-box">
+      <h3 style="font-family: var(--font-serif); font-size: 22px; color: #1A365D; margin-bottom: 16px;">Ce que vous pouvez attendre semaine après semaine :</h3>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-title">Semaine 1 : Confort digestif & Assimilation immédiate</div>
+        <p style="font-size: 14px; color: #4A5568; margin: 0;">Aucune remontée acide, aucune mauvaise haleine. Les principes actifs biodisponibles (SAC et Ubiquinol) commencent à saturer les tissus myocardiques et vasculaires.</p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-title">Semaines 2 à 4 : Amélioration du tonus & Souplesse artérielle</div>
+        <p style="font-size: 14px; color: #4A5568; margin: 0;">Augmentation de la synthèse d'oxyde nitrique. Moins de lourdeur dans les jambes, meilleure récupération lors des efforts physiques quotidiens, tension artérielle plus régulière.</p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-title">Semaines 8 à 12 : Protection cardiovasculaire consolidée</div>
+        <p style="font-size: 14px; color: #4A5568; margin: 0;">Régulation optimale du calcium vasculaire grâce à la vitamine K2. Énergie mitochondriale stabilisée, sensation globale de vitalité et sérénité cardiaque.</p>
+      </div>
+    </section>
+
+    <!-- 13. COMPARISON TABLE -->
+    <section class="comparison-table-wrapper">
+      <h3 style="font-family: var(--font-serif); font-size: 24px; margin-bottom: 16px;">Tableau Comparatif : Resilia® face aux Alternatives</h3>
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Critère Évalué</th>
+            <th class="highlight">Resilia® Ail Vieilli + Ubiquinol</th>
+            <th>Gélules d'Ail Classiques</th>
+            <th>CoQ10 Ubiquinone Standard</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Molécule Active</strong></td>
+            <td class="highlight">S-allylcystéine (SAC) + Ubiquinol</td>
+            <td>Allicine instable</td>
+            <td>Ubiquinone oxydée</td>
+          </tr>
+          <tr>
+            <td><strong>Taux de Biodisponibilité</strong></td>
+            <td class="highlight"><span class="check">✓ 98% assimilable</span></td>
+            <td><span class="cross">✕ Moins de 5%</span></td>
+            <td><span class="cross">✕ Faible après 45 ans</span></td>
+          </tr>
+          <tr>
+            <td><strong>Tolérance Gastrique</strong></td>
+            <td class="highlight"><span class="check">✓ 100% Inodore & Sans Brûlures</span></td>
+            <td><span class="cross">✕ Reflux & Haleine persistante</span></td>
+            <td>Neutre</td>
+          </tr>
+          <tr>
+            <td><strong>Soutien Mitochondries</strong></td>
+            <td class="highlight"><span class="check">✓ Oui (Ubiquinol 100 mg)</span></td>
+            <td><span class="cross">✕ Non</span></td>
+            <td>Partiel</td>
+          </tr>
+          <tr>
+            <td><strong>Vitamine K2 MK-7 Incluse</strong></td>
+            <td class="highlight"><span class="check">✓ Oui</span></td>
+            <td><span class="cross">✕ Non</span></td>
+            <td><span class="cross">✕ Non</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 14. 3-TIER PACKAGE PRICING / OFFER -->
+    <section class="pricing-section" id="offres">
+      <h3 class="pricing-heading">Choisissez Votre Cure Cardio-Protectrice</h3>
+      <p style="color: var(--text-muted); font-size: 15px;">Sélectionnez votre formule ci-dessous pour être redirigé vers la page sécurisée de commande.</p>
+
+      <div class="pricing-grid">
+        <!-- Tier 1 -->
+        <div class="pricing-card">
+          <div>
+            <div class="pricing-tier-name">1 Flacon (30 Jours)</div>
+            <div style="font-size: 13px; color: #718096; margin-bottom: 8px;">Cure Découverte</div>
+            <div class="pricing-price">29 000 FCFA</div>
+            <div class="pricing-savings" style="color: #718096;">Prix standard</div>
+          </div>
+          <a href="https://shop.naturalmiracles.online/products/resilia-ail-vieilli-ubiquinol?variant=54617624969500" class="btn-cta" target="_blank" rel="noopener">Commander 1 Flacon</a>
+        </div>
+
+        <!-- Tier 2 (Highlighted) -->
+        <div class="pricing-card popular">
+          <div class="badge-popular">⭐ Le Plus Populaire</div>
+          <div>
+            <div class="pricing-tier-name" style="color: var(--color-primary-dark);">3 Flacons (90 Jours)</div>
+            <div style="font-size: 13px; color: #718096; margin-bottom: 8px;">Cure Recommandée</div>
+            <div class="pricing-price">69 000 FCFA</div>
+            <div class="pricing-savings">Économisez 18 000 FCFA + Port Offert</div>
+          </div>
+          <a href="https://shop.naturalmiracles.online/products/resilia-ail-vieilli-ubiquinol?variant=54617625493788" class="btn-cta btn-cta-accent" target="_blank" rel="noopener">Commander le Pack 3 Flacons</a>
+        </div>
+
+        <!-- Tier 3 -->
+        <div class="pricing-card">
+          <div>
+            <div class="pricing-tier-name">6 Flacons (180 Jours)</div>
+            <div style="font-size: 13px; color: #718096; margin-bottom: 8px;">Pack Longévité Maximale</div>
+            <div class="pricing-price">119 000 FCFA</div>
+            <div class="pricing-savings">Économisez 55 000 FCFA + Livraison Prioritaire</div>
+          </div>
+          <a href="https://shop.naturalmiracles.online/products/resilia-ail-vieilli-ubiquinol?variant=54617625526556" class="btn-cta" target="_blank" rel="noopener">Commander le Pack 6 Flacons</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 15. RISK-FREE GUARANTEE -->
+    <section class="guarantee-box">
+      <div class="guarantee-badge">🛡️</div>
+      <div class="guarantee-text">
+        <h4>Garantie Sérénité de 60 Jours « Zéro Risque »</h4>
+        <p>Essayez Resilia® en toute confiance. Si après 60 jours vous ne constatez pas une nette amélioration de votre confort circulatoire, de votre énergie et de vos mesures tensionnelles, renvoyez simplement vos flacons (même vides) pour obtenir un remboursement intégral immédiat.</p>
+      </div>
+    </section>
+
+    <!-- 16. FINAL CTA -->
+    <section class="final-cta-section">
+      <h3>Prêt(e) à Protéger Vos Artères Sans Effets Indésirables ?</h3>
+      <p>Bénéficiez des tarifs préférentiels réservés aux lecteurs de ce dossier avant épuisement du lot de fabrication en cours.</p>
+      <a href="https://shop.naturalmiracles.online/products/resilia-ail-vieilli-ubiquinol" class="btn-cta final-cta-btn" target="_blank" rel="noopener">
+        Voir la Disponibilité sur la Boutique Officielle →
+      </a>
+      <div style="font-size: 12px; color: #718096; margin-top: 12px;">Livraison rapide et sécurisée • Service client disponible 6j/7</div>
+    </section>
+
+    <!-- 17. LEGAL FOOTER -->
+    <footer class="article-footer">
+      <p><strong>Avertissement Médical et Légal :</strong> Les informations contenues dans cet article sont publiées à titre purement informatif et ne sauraient remplacer une consultation médicale personnalisée auprès d'un cardiologue ou d'un professionnel de santé qualifié. Resilia® est un complément alimentaire et n'a pas vocation à diagnostiquer, traiter, guérir ou prévenir une quelconque maladie. Ne suspendez jamais un traitement médical prescrit sans l'accord préalable de votre médecin traitant.</p>
+      <div class="footer-links">
+        <a href="https://shop.naturalmiracles.online" target="_blank">Boutique Officielle</a> |
+        <a href="https://shop.naturalmiracles.online/policies/privacy-policy" target="_blank">Politique de Confidentialité</a> |
+        <a href="https://shop.naturalmiracles.online/policies/terms-of-service" target="_blank">Conditions Générales de Vente</a> |
+        <a href="https://shop.naturalmiracles.online/pages/contact" target="_blank">Contact</a>
+      </div>
+      <p style="margin-top: 12px;">© 2026 Santé Cardiovasculaire & Métabolique. Tous droits réservés.</p>
+    </footer>
+
+  </main>
+
+</body>
+</html>

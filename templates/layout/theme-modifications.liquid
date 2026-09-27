@@ -1,0 +1,161 @@
+{% comment %}
+  ==============================================================================
+  DTC ADVERTORIAL ISOLATION ENGINE — THEME.LIQUID MODIFICATION GUIDE
+  ==============================================================================
+  This document provides the exact code changes required in your Shopify theme's
+  `layout/theme.liquid` to cleanly isolate advertorial pages while leaving standard
+  e-commerce pages (Home, Collections, Products, Cart) 100% untouched.
+
+  Follow the 4 steps below:
+{% endcomment %}
+
+<!-- STEP 1: Add at the very start of <head> (right after the opening <head> tag) -->
+<head>
+  {% assign is_advertorial = false %}
+  {% if template contains 'advertorial' or page.template_suffix == 'advertorial' or page.handle == 'contact' or page.handle == 'advertorial' or page.handle == 'dossier' or request.path contains '/pages/contact' or request.path contains '/pages/advertorial' or request.path contains '/pages/dossier' %}
+    {% assign is_advertorial = true %}
+  {% endif %}
+
+  {% if is_advertorial %}
+    <!-- FIRST-PRINCIPLE CONTRACT FREEZING FOR THIRD-PARTY COD & STICKY APPS (e.g. EasySell) -->
+    <script>
+      // 1. Force COD apps to treat page as "collection" which aborts sticky button creation at line 1
+      window.ES_CURRENT_PAGE = "collection";
+      try {
+        Object.defineProperty(window, 'ES_CURRENT_PAGE', {
+          value: 'collection',
+          writable: false,
+          configurable: false
+        });
+      } catch(e) {}
+
+      // 2. Lock app config so any deferred script read yields inactive & non-sticky state
+      const disabledESConfig = {
+        active: false,
+        sticky: false,
+        cpb_button: false,
+        apply: "none",
+        products: [],
+        settings: {
+          active: false,
+          sticky: false,
+          cpb_button: false,
+          apply: "none",
+          products: [],
+          form_type: "popup"
+        },
+        fields: []
+      };
+      window.EASYSELL_CONFIG = disabledESConfig;
+      window.ES_CONFIG = disabledESConfig;
+      try {
+        Object.defineProperty(window, 'EASYSELL_CONFIG', {
+          value: disabledESConfig,
+          writable: false,
+          configurable: false
+        });
+        Object.defineProperty(window, 'ES_CONFIG', {
+          value: disabledESConfig,
+          writable: false,
+          configurable: false
+        });
+      } catch(e) {}
+
+      // 3. Early document-start MutationObserver to block & remove rogue scripts and buttons before first paint
+      (function() {
+        const obs = new MutationObserver(function(mutations) {
+          for (let i = 0; i < mutations.length; i++) {
+            const nodes = mutations[i].addedNodes;
+            for (let j = 0; j < nodes.length; j++) {
+              const node = nodes[j];
+              if (node.nodeType !== 1) continue;
+              if (node.tagName === 'SCRIPT' && node.src && node.src.indexOf('easysell') !== -1) {
+                try { node.type = 'text/plain'; node.remove(); } catch(err) {}
+                continue;
+              }
+              if (node.tagName === 'LINK' && node.href && node.href.indexOf('easysell') !== -1) {
+                try { node.remove(); } catch(err) {}
+                continue;
+              }
+              if (node.id === 'es-script' || node.id === 'es-custom-js' || node.id === 'es-css') {
+                try { node.remove(); } catch(err) {}
+                continue;
+              }
+              if (node.id === 'es-popup-button' || (node.id && node.id.indexOf('es-popup') === 0) || (node.id && node.id.indexOf('easysell') !== -1)) {
+                try { node.remove(); } catch(err) {}
+                continue;
+              }
+              if (node.classList && (node.classList.contains('es-sticky') || node.classList.contains('es-css') || node.classList.contains('es-popup-button'))) {
+                try { node.remove(); } catch(err) {}
+                continue;
+              }
+            }
+          }
+        });
+        obs.observe(document.documentElement, { childList: true, subtree: true });
+      })();
+    </script>
+
+    <style id="es-killer-css">
+      #es-popup-button,
+      #es-popup-button-product,
+      #es-popup-button-cart,
+      #es-popup-button-drawer,
+      #es-form-button,
+      #es-submit-form-button,
+      #easysell,
+      #easysell-modal,
+      #easysell-upsell,
+      .es-sticky,
+      .es-sticky-bottom,
+      .es-sticky-desktop,
+      .es-sticky-top,
+      .es-popup-button,
+      .es-css,
+      [id^="es-popup"],
+      [class*="es-sticky"],
+      [class*="easysell"],
+      [id*="easysell"] {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+        max-height: 0 !important;
+        height: 0 !important;
+        width: 0 !important;
+        position: fixed !important;
+        top: -9999px !important;
+        left: -9999px !important;
+        z-index: -99999 !important;
+      }
+    </style>
+  {% endif %}
+
+
+<!-- STEP 2: Wrap store Header Group in layout/theme.liquid -->
+{% unless is_advertorial %}
+  <div id="header-group">
+    {% sections 'header-group' %}
+  </div>
+{% endunless %}
+
+
+<!-- STEP 3: Keep content_for_layout clean (Shopify requires it unconditional) -->
+<main id="MainContent" class="content-for-layout" role="main">
+  {{ content_for_layout }}
+</main>
+
+
+<!-- STEP 4: Wrap store Footer Group and Drawer Modals in layout/theme.liquid -->
+{% unless is_advertorial %}
+  <footer>
+    {% sections 'footer-group' %}
+  </footer>
+
+  {% render 'cart-drawer', render_wrapper: true %}
+  {% render 'theme-drawer' %}
+  {% render 'search-modal' %}
+  {% if settings.quick_add or settings.mobile_quick_add %}
+    {% render 'quick-add-modal' %}
+  {% endif %}
+{% endunless %}
